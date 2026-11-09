@@ -1,0 +1,9 @@
+# Secrets: X session cookies
+auth.json
+
+# Dependencies
+node_modules/
+
+# Debug output and OS files
+tweetshot-debug.png
+.DS_Store
