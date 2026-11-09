@@ -222,6 +222,10 @@ X uses obfuscated class names, so the script relies on `data-testid` values, rol
 
 To debug, run with `TWEETSHOT_HEADED=1`, or write a throwaway Playwright script that opens the page with the same launch options and prints the DOM chain from the element in question (`getComputedStyle`, `childElementCount`).
 
+```zsh
+TWEETSHOT_HEADED=1 tweetshot https://x.com/RetroMemoriesHQ/status/2119618225524842684
+```
+
 ### Updating dependencies
 
 ```zsh
