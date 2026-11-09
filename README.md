@@ -70,7 +70,14 @@ tweetext() { tweetshot --extract "$@"; }
 
 ### 1. Login: `auth.json`
 
-The script needs two cookies of a logged-in x.com session.
+For reliable results the script needs two cookies of a logged-in x.com session.
+
+> **Login is recommended, not strictly required.** Without `auth.json` tweetshot still runs as a logged-out visitor and often produces a correct result, but treat that as a fallback. X limits what logged-out users see and can do:
+> - a "See all the replies" / "Continue to X" bar is pinned to the bottom of the page (tweetshot removes it, which depends on X's current markup);
+> - the logged-out video player behaves differently (it autoplays; tweetshot restarts it from 0), so video and gallery recordings are more fragile;
+> - some tweets are unavailable or partly hidden (sensitive-content or age-restricted media, protected accounts, rate-limited or blocked requests, sometimes a login wall).
+>
+> `--extract` never uses the login (it reads the public syndication endpoint), so this section only matters for screenshots and recordings.
 
 1. Log in to https://x.com in your normal Chrome.
 2. Open DevTools: `Cmd+Opt+I` > **Application** > **Cookies** > `https://x.com`.
@@ -90,7 +97,7 @@ The script adds these cookies (plus `lang=en`) to the browser context on every r
 
 **Security:** `auth_token` gives full access to the account. Never commit, paste or share it. Prefer a dedicated secondary account. Logging out of x.com in the browser that issued the cookies invalidates them.
 
-### 2. Translation: `config.json` (optional)
+### 2. Options: `config.json` (optional)
 
 ```json
 {
@@ -225,7 +232,7 @@ cd ~/.tweetshot && npm i playwright@latest && npx playwright install ffmpeg
 
 - No audio in recorded video output (extracted media keep audio). Idea: download the MP4 (as `--extract` does) and mux with `ffmpeg -map 0:v -map 1:a -c copy -shortest`.
 - Quoted-tweet translation cannot be reverted.
-- Gallery handling was verified only on an all-image gallery. Video and mixed galleries rely on the same thumbnail injection as single videos but are untested.
-- GIFs (`tweet_video`) and multiple videos outside a gallery are untested.
+- Running without `auth.json` is a fallback: X limits logged-out users (a pinned "See all the replies" / "Continue to X" bar that tweetshot has to remove, a different autoplaying video player, hidden or unavailable tweets, a possible login wall), so screenshots and recordings are more fragile. Provide `auth.json` for reliable results (see [Login](#1-login-authjson)).
+- Multiple videos outside a gallery are untested.
 - Trim alignment is approximate (about 0.2 s).
 - Relies on an undocumented syndication endpoint and X's current DOM, which can change without notice. Use for personal archiving and respect X's terms and the content owner's rights.
