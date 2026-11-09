@@ -166,7 +166,7 @@ Output of `tweetshot <tweet-url>` with default settings.
 | Tweet type | Tweet | Output |
 |---|---|---|
 | Static image | https://x.com/sydmeadofficial/status/2031042354514366753 | <img width="1164" height="1818" alt="2031042354514366753" src="https://github.com/user-attachments/assets/20d9d961-e388-4bd6-9492-869bce899fd5" /> |
-| GIF | https://x.com/LyonsMatthew/status/1371844186438258690 | https://github.com/user-attachments/assets/a0759195-9208-4314-b257-e4ad9d75d9ef |
+| GIF | https://x.com/LyonsMatthew/status/1371844186438258690 | https://github.com/user-attachments/assets/f9a2640c-e740-475b-97e4-631164710a70 |
 | Video | https://x.com/Y2KKAIN/status/2031525661261574629 | https://github.com/user-attachments/assets/3a03a125-cf83-410a-8533-31577fd225bb |
 | Image gallery | https://x.com/luusssso/status/2119591990866399524 | https://github.com/user-attachments/assets/af0f3cad-1e26-4ca5-b784-af0c44b6f742 |
 | Mixed image/video gallery | https://x.com/goshki/status/2005386147674157298 | https://github.com/user-attachments/assets/921365e0-0143-4d10-9055-5836668fb7c6 |
