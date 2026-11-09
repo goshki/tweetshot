@@ -140,13 +140,7 @@ tweetext  [--size=X|XxY|--width=X|--height=Y] <tweet-url> [outdir]     # = tweet
 | `--border-color=#RRGGBB` | `#FFFFFF` | Padding color, 6-digit hex (the `#` is optional). Quote it if your shell treats `#` specially. |
 | `--no-translation` | off | Always revert X's auto-translation, whatever the language. |
 
-Examples:
-
-```zsh
-tweetshot https://x.com/RetroMemoriesHQ/status/2119618225524842684
-tweetshot --no-translation https://x.com/domjachas/status/2119552562072555771 ~/Pictures
-TWEETSHOT_HEADED=1 tweetshot https://x.com/luusssso/status/2119591990866399524
-```
+## Examples
 
 **`--extract`** downloads every media item of the main tweet (not the quoted tweet) via the syndication endpoint. No browser or login is used. Images are saved in original size (`?name=orig`), videos/GIFs as the highest-bitrate MP4 (with audio; HLS via ffmpeg if no MP4 exists). Files are named `<tweet-id>-<n>.<ext>`. It fails with "no media found" for text-only or unavailable tweets.
 
@@ -160,15 +154,15 @@ Every run uses its own temporary browser, so several `tweetshot` commands can ru
 
 ## Examples
 
-Output of `tweetshot <tweet-url>` with default settings (files in [`docs/`](docs/)).
+Output of `tweetshot <tweet-url>` with default settings.
 
 | Tweet type | Tweet | Output |
 |---|---|---|
-| Static image | https://x.com/sydmeadofficial/status/2031042354514366753 | ![Static image](docs/2031042354514366753.png) |
-| GIF | https://x.com/LyonsMatthew/status/1371844186438258690 | [`1371844186438258690.mp4`](docs/1371844186438258690.mp4) |
-| Video | https://x.com/Y2KKAIN/status/2031525661261574629 | [`2031525661261574629.mp4`](docs/2031525661261574629.mp4) |
-| Image gallery | https://x.com/luusssso/status/2119591990866399524 | [`2119591990866399524.mp4`](docs/2119591990866399524.mp4) |
-| Mixed image/video gallery | https://x.com/goshki/status/2005386147674157298 | [`2005386147674157298.mp4`](docs/2005386147674157298.mp4) |
+| Static image | https://x.com/sydmeadofficial/status/2031042354514366753 | <img width="1164" height="1818" alt="2031042354514366753" src="https://github.com/user-attachments/assets/20d9d961-e388-4bd6-9492-869bce899fd5" /> |
+| GIF | https://x.com/LyonsMatthew/status/1371844186438258690 | https://github.com/user-attachments/assets/a0759195-9208-4314-b257-e4ad9d75d9ef |
+| Video | https://x.com/Y2KKAIN/status/2031525661261574629 | https://github.com/user-attachments/assets/3a03a125-cf83-410a-8533-31577fd225bb |
+| Image gallery | https://x.com/luusssso/status/2119591990866399524 | https://github.com/user-attachments/assets/af0f3cad-1e26-4ca5-b784-af0c44b6f742 |
+| Mixed image/video gallery | https://x.com/goshki/status/2005386147674157298 | https://github.com/user-attachments/assets/921365e0-0143-4d10-9055-5836668fb7c6 |
 
 ## Code map (`tweetshot.mjs`)
 
